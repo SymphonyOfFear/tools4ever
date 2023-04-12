@@ -1,0 +1,98 @@
+
+ .styled-table tbody tr.active-row a{
+    font-weight: bold;
+    text-decoration: none;
+    overflow: hidden;
+    position: relative;
+    display: inline-block;
+}
+.styled-table tbody tr.active-row a::before,
+.styled-table tbody tr.active-row a::after {
+ content: '';
+  position: absolute;
+  width: 100%;
+  left: 0;
+}
+.styled-table tbody tr.active-row a::before {
+  background-color: rgb(93, 14, 30);
+  height: 2px;
+  bottom: 0;
+  transform-origin: 100% 50%;
+  transform: scaleX(0);
+  transition: transform .3s cubic-bezier(0.76, 0, 0.24, 1);
+}
+.styled-table tbody tr.active-row a::after {
+  content: attr(data-replace);
+  height: 100%;
+  top: 0;
+  transform-origin: 100% 50%;
+  transform: translate3d(200%, 0, 0);
+  transition: transform .3s cubic-bezier(0.76, 0, 0.24, 1);
+  color: rgb(93, 14, 30);
+}
+
+.styled-table tbody tr.active-row a:hover::before {
+  transform-origin: 0% 50%;
+  transform: scaleX(1);
+}
+.styled-table tbody tr.active-row a:hover::after {
+  transform: translate3d(0, 0, 0);
+}
+
+.styled-table tbody tr.active-row a span {
+  display: inline-block;
+  transition: transform .3s cubic-bezier(0.76, 0, 0.24, 1);
+}
+
+.styled-table tbody tr.active-row   a:hover span {
+  transform: translate3d(-200%, 0, 0);
+}
+
+/* Presentational Styles */
+body {
+  display: grid;
+  font-family: 'Poppins', sans-serif;
+  font-size: 27px;
+  line-height: 1.5;
+  height: 100vh;
+  place-items: center;
+}
+
+.styled-table tbody tr.active-row a {
+  text-decoration: none;
+  color: #a50edc;
+  font-weight: 700;
+  vertical-align: top;
+}
+.styled-table {
+    border-collapse: collapse;
+    margin: 25px 0;
+    font-size: 0.9em;
+    font-family: sans-serif;
+    min-width: 400px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+}
+.styled-table thead tr {
+    background-color: #0f0098;
+    color: #ffffff;
+    text-align: left;
+}
+.styled-table th,
+.styled-table td {
+    padding: 12px 15px;
+}
+.styled-table tbody tr {
+    border-bottom: 1px solid #dddddd;
+}
+
+.styled-table tbody tr:nth-of-type(even) {
+    background-color: #f3f3f3;
+}
+
+.styled-table tbody tr:last-of-type {
+    border-bottom: 2px solid #0f0098;
+}
+.styled-table tbody tr.active-row {
+    font-weight: bold;
+    color: #0f0098;
+}
