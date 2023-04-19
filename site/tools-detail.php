@@ -29,31 +29,31 @@ $tool = mysqli_fetch_assoc($result);
 
         </thead>
         <tbody>
-        
-                <tr class="active-row">
-                    <td>
-                        <?php echo $tool['tool_id']; ?>
-                    </td>
-                    <td>
-                        <?php echo $tool['tool_name']; ?>
-                    </td>
 
-                    <td>
-                        <?php echo $tool['tool_category']; ?>
-                    </td>
+            <tr class="active-row">
+                <td>
+                    <?php echo $tool['tool_id']; ?>
+                </td>
+                <td>
+                    <?php echo $tool['tool_name']; ?>
+                </td>
 
-                    <td>
-                        <?php echo $tool['tool_price']; ?>
-                    </td>
+                <td>
+                    <?php echo $tool['tool_category']; ?>
+                </td>
 
-                    <td>
-                        <?php echo $tool['tool_brand']; ?>
-                    </td>
-                </tr>
-                <tr class="active-row">
+                <td>&euro;
+                    <?php echo $tool['tool_price']; ?>
+                </td>
+
+                <td>
+                    <?php echo $tool['tool_brand']; ?>
+                </td>
+            </tr>
+            <tr class="active-row">
                 <td><a href="tools-overzicht.php">Vorige Pagina</a>
                 </td>
-</tr>
+            </tr>
         </tbody>
     </table>
 

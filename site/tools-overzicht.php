@@ -32,25 +32,25 @@ $tools = mysqli_fetch_all($result, MYSQLI_ASSOC);
         <tbody>
             <?php foreach ($tools as $tool): ?>
                 <tr class="active-row">
-                            <td>
-                                <?php echo $tool['tool_name']; ?>
-                            </td>
+                    <td>
+                        <?php echo $tool['tool_name']; ?>
+                    </td>
 
-                            <td>
-                                <?php echo $tool['tool_category']; ?>
-                            </td>
+                    <td>
+                        <?php echo $tool['tool_category']; ?>
+                    </td>
 
-                            <td>
-                                <?php echo $tool['tool_price']; ?>
-                            </td>
+                    <td>&euro;
+                        <?php echo $tool['tool_price']; ?>
+                    </td>
 
-                            <td>
-                                <?php echo $tool['tool_brand']; ?>
-                            </td>
+                    <td>
+                        <?php echo $tool['tool_brand']; ?>
+                    </td>
 
-                            <td><a href="tools-detail.php?tool_id=<?php echo $tool['tool_id'] ?>">Details bekijken</a>
-                            </td>
-                        </tr>  
+                    <td><a href="tools-detail.php?tool_id=<?php echo $tool['tool_id'] ?>">Details bekijken</a>
+                    </td>
+                </tr>
             <?php endforeach ?>
         </tbody>
     </table>
