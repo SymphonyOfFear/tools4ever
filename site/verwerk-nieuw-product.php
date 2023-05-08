@@ -13,5 +13,5 @@ $sql = "INSERT INTO tools (tool_name, tool_category, tool_price, tool_brand) VAL
 
 mysqli_query($conn, $sql);
 
-    
+
 ?>

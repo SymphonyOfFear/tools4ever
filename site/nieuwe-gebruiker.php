@@ -9,40 +9,8 @@ $result = mysqli_query($conn, $sql);
 
 $tools = mysqli_fetch_all($result, MYSQLI_ASSOC);
 
-//verwerk-nieuw-product.php
-if($_SERVER['REQUEST_METHOD'] != "POST"){
-    header($_SERVER["SERVER_PROTOCOL"] . " 405 Method Not Allowed", true, 405);
-    include
-    exit;
-}
 
-// check of er wel een correct getal is ingevoerd
-if(is_numeric($_POST['prijsTool'])){
-    echo 'number found';
 
-    $email = $_POST['emailGebruiker'];
-    $password = $_POST['passwordGebruiker'];
-    $firstname = $_POST['firstnameGebruiker'];
-    $lastname = $_POST['lastnameGebruiker'];
-    $adress = $_POST['adressGebruiker'];
-    $city = $_POST['cityGebruiker'];
-
-    $sql = "INSERT INTO tools (tool_name,tool_category,tool_price,tool_brand) VALUES ('$naam', '$categorie', '$prijs', '$merk')";
-
-    mysqli_query($conn, $sql);
-}
-
-// checken hoe lang de string is
-
-if(strlen($_POST['naamTool']) < 3)
-{
-    echo "Een naam moet minimaal uit 3 tekens bestaan";
-    exit;
-}
-if(empty($_POST['categorieTool']))
-{
-    echo "Er moet een categorie opgegeven worden! Deze mag niet leeg zijn!";
-}
 
 ?>
 <!DOCTYPE html>
@@ -58,36 +26,36 @@ if(empty($_POST['categorieTool']))
 <body>
 
     <div class="registreer-box">
-        <h2>Nieuwe Gereedschap</h2>
-        <form action="verwerk-nieuw-product.php" method="post">
-        <div class="user-box">
-                <input type="text" name="emailGebruiker" id="emailGebruiker" required="">
-                <label for="emailGebruiker">Merk</label>
+        <h2>Nieuwe Gebruiker</h2>
+        <form action="verwerk-nieuwe-gebruiker.php" method="post">
+
+            <div class="user-box">
+                <input type="email" name="emailGebruiker" id="emailGebruiker" required="">
+                <label for="emailGebruiker">E-mail</label>
             </div>
-        <div class="user-box">
-                <input type="text" name="passwordGebruiker" id="passwordGebruiker" required="">
-                <label for="passwordGebruiker">Merk</label>
+            <div class="user-box">
+                <input type="password" name="passwordGebruiker" id="passwordGebruiker" required="">
+                <label for="passwordGebruiker">Wachtwoord</label>
             </div>
-        <div class="user-box">
+            <div class="user-box">
                 <input type="text" name="firstNameGebruiker" id="firstNameGebruiker" required="">
-                <label for="firstNameGebruiker">Merk</label>
+                <label for="firstNameGebruiker">Voornaam</label>
             </div>
-        <div class="user-box">
+            <div class="user-box">
                 <input type="text" name="lastNameGebruiker" id="lastNameGebruiker" required="">
-                <label for="lastNameGebruiker">Merk</label>
+                <label for="lastNameGebruiker">Achternaam</label>
             </div>
-        <div class="user-box">
+            <div class="user-box">
                 <input type="text" name="adressGebruiker" id="adressGebruiker" required="">
-                <label for="adressGebruiker">Merk</label>
+                <label for="adressGebruiker">Adress</label>
             </div>
-        <div class="user-box">
+            <div class="user-box">
                 <input type="text" name="cityGebruiker" id="cityGebruiker" required="">
-                <label for="cityGebruiker">Merk</label>
+                <label for="cityGebruiker">Stad</label>
             </div>
-        
-           
-            
-            <button type="submit"><a><span></span><span></span><span></span>Registreer het nieuwe product!</a></button>
+
+
+            <button type="submit"><a><span></span><span></span><span></span>Registreren nu!</a></button>
         </form>
     </div>
 </body>

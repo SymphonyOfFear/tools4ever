@@ -60,6 +60,8 @@ body {
  
 }
 button {
+  left: 15%;
+  position: relative;
   border-width: 0;
   box-shadow: none;
   background-color: transparent;
